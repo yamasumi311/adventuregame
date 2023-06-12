@@ -1,6 +1,15 @@
 # pursing CSV file using the 'csv' module
 
 import csv
+import random
+
+
+class Question:
+    def __init__(self, question, answer):
+        self.question = question
+        self.answer = answer
+
+
 score = 0
 
 # open the CSV file
@@ -8,10 +17,20 @@ with open('questionList', 'r') as file:
     # Create a CSV reader
     reader = csv.reader(file)
 
+    # Initialize an empty array to store the questions
+    questions = []
+
     # Iterate over each row in the CSV file
     for row in reader:
         # Access the values in each column
         question = row[0]
         answer = row[1]
 
-        # Process the data as needed
+        # Create a question object and append it to the array
+        question_obj = Question(question, answer)
+        questions.append(question_obj)
+
+    # Access and print the questions with their answers
+    for question_obj in questions:
+        print(f'Question: {question_obj.question}')
+        print(f'Answer: {question_obj.answer}')
