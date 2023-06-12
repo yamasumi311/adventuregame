@@ -2,8 +2,14 @@ animal = input('Enter dog or cat: ')
 while not (animal.lower() == 'dog' or animal.lower() == 'cat'):
     animal = input('That is invalid input. Enter dog or cat: ')
 
-animalAge = input('Enter age of animal in number: ')
-animalAge = int(animalAge)
+
+# check if input is number
+while True:
+    try:
+        animalAge = int(input('Enter age of animal in number: '))
+        break
+    except:
+        pass
 
 if animal.lower() == 'dog':
     if animalAge == 1:
