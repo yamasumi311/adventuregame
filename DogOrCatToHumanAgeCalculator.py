@@ -9,6 +9,7 @@ while True:
         animalAge = int(input('Enter age of animal in number: '))
         break
     except:
+        print('That is invalid input. Try again.')
         pass
 
 if animal.lower() == 'dog':
