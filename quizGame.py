@@ -30,8 +30,17 @@ with open('questionList', 'r') as file:
         question_obj = Question(question, answer)
         questions.append(question_obj)
 
+    # Shuffle the lines randomly
+    random.shuffle(questions)
+
+    # Select a specific number of random objects
+    num_question_obj = 3
+    random_question_obj = questions[:num_question_obj]
+
+    # Iterate over the randomly selected question_obj
+
     # Access and print the questions with their answers
-    for question_obj in questions:
+    for question_obj in random_question_obj:
         user_input = input(f'Question: {question_obj.question} --- ').lower()
         if user_input == question_obj.answer.lower():
             print('You are correct!')
