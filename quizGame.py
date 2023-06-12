@@ -1,3 +1,4 @@
+# pursing csv file without importing 'csv'
 import random
 score = 0
 
