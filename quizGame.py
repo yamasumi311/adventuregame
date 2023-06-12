@@ -32,5 +32,11 @@ with open('questionList', 'r') as file:
 
     # Access and print the questions with their answers
     for question_obj in questions:
-        print(f'Question: {question_obj.question}')
-        print(f'Answer: {question_obj.answer}')
+        user_input = input(f'Question: {question_obj.question} --- ').lower()
+        if user_input == question_obj.answer.lower():
+            print('You are correct!')
+            score = score + 1
+        else:
+            print(f'You are incorrect. The answer is {question_obj.answer}.')
+
+print(f'Your score is {score}')
